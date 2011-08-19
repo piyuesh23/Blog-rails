@@ -1,0 +1,1695 @@
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (831.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (514.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+  [1m[35mSQL (2647.7ms)[0m  CREATE TABLE `posts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110802075252')[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 17:47:30 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 173ms (Views: 53.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-08-03 17:47:38 +0530
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (318.3ms)
+Rendered posts/new.html.erb within layouts/application (364.0ms)
+Completed 200 OK in 479ms (Views: 471.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 17:49:39 +0530
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-08-03 17:49:56 +0530
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (7.4ms)
+Rendered posts/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2011-08-03 17:50:02 +0530
+  Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "post"=>{"title"=>"test", "body"=>"test"}, "commit"=>"Create Post"}
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `posts` (`title`, `body`, `created_at`, `updated_at`) VALUES ('test', 'test', '2011-08-03 12:20:02', '2011-08-03 12:20:02')
+  [1m[36mSQL (149.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 3284ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 17:50:05 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 87ms (Views: 78.2ms | ActiveRecord: 151.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 17:50:14 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (1621.0ms)
+Completed 200 OK in 1633ms (Views: 1624.9ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+  [1m[35mSQL (475.4ms)[0m  ALTER TABLE `posts` ADD `image_file_name` varchar(255)
+  [1m[36mSQL (379.3ms)[0m  [1mALTER TABLE `posts` ADD `image_content_type` varchar(255)[0m
+  [1m[35mSQL (325.6ms)[0m  ALTER TABLE `posts` ADD `image_file_size` int(11)
+  [1m[36mSQL (345.9ms)[0m  [1mALTER TABLE `posts` ADD `image_updated_at` datetime[0m
+  [1m[35mSQL (76.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110803124617')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `posts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2011-08-03 18:21:18 +0530
+  Processing by PostsController#new as HTML
+Rendered posts/_form.html.erb (70.8ms)
+Rendered posts/new.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 87ms (Views: 77.5ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:23:24 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (243.9ms)
+Completed 500 Internal Server Error in 355ms
+
+ActionView::Template::Error (can't convert Paperclip::Attachment into String):
+    1: <p id="notice"><%= notice %></p>
+    2: <p>
+    3:   <%= image_tag @post.image %>
+    4: </p>
+    5: 
+    6: <p>
+  app/views/posts/show.html.erb:3:in `_app_views_posts_show_html_erb___870642863159944518_31490280_776953435892063481'
+  app/controllers/posts_controller.rb:18:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2011-08-03 18:24:06 +0530
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/_form.html.erb (104.8ms)
+Rendered posts/edit.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 177ms (Views: 166.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at 2011-08-03 18:24:19 +0530
+  Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "post"=>{"title"=>"test", "body"=>"test", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004148cb0 @original_filename="HD_Wallpaper_225.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"HD_Wallpaper_225.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20110803-12826-5wat69>>}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE `posts` SET `image_file_name` = 'HD_Wallpaper_225.jpg', `image_content_type` = 'image/jpeg', `image_file_size` = 328681, `image_updated_at` = '2011-08-03 12:54:20', `updated_at` = '2011-08-03 12:54:20' WHERE `posts`.`id` = 1
+[paperclip] Saving attachments.
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/original/HD_Wallpaper_225.jpg
+  [1m[36mSQL (53.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 883ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:24:20 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (can't convert Paperclip::Attachment into String):
+    1: <p id="notice"><%= notice %></p>
+    2: <p>
+    3:   <%= image_tag @post.image %>
+    4: </p>
+    5: 
+    6: <p>
+  app/views/posts/show.html.erb:3:in `_app_views_posts_show_html_erb___870642863159944518_35399040_776953435892063481'
+  app/controllers/posts_controller.rb:18:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.0ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:25:17 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 31ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:27:52 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 50ms
+
+ActionView::MissingTemplate (Missing template posts/show with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/home/piyuesh/ror/blog/app/views"):
+  app/controllers/posts_controller.rb:18:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:28:11 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 101ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/system/images/1/small/HD_Wallpaper_225.jpg?1312376060" for 127.0.0.1 at 2011-08-03 18:28:12 +0530
+
+ActionController::RoutingError (No route matches "/system/images/1/small/HD_Wallpaper_225.jpg"):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2011-08-03 18:28:18 +0530
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/_form.html.erb (102.3ms)
+Rendered posts/edit.html.erb within layouts/application (106.1ms)
+Completed 200 OK in 120ms (Views: 109.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at 2011-08-03 18:28:27 +0530
+  Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "post"=>{"title"=>"test", "body"=>"test", "image"=>#<ActionDispatch::Http::UploadedFile:0x000000045a2450 @original_filename="HD_Wallpaper_225.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"HD_Wallpaper_225.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20110803-13100-1j4pwbz>>}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE `posts` SET `image_updated_at` = '2011-08-03 12:58:27', `updated_at` = '2011-08-03 12:58:34' WHERE `posts`.`id` = 1
+[paperclip] Saving attachments.
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/original/HD_Wallpaper_225.jpg
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/original/HD_Wallpaper_225.jpg
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/small/HD_Wallpaper_225.jpg
+  [1m[36mSQL (68.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 7863ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:28:34 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 32ms (Views: 19.1ms | ActiveRecord: 69.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 18:46:28 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:44: unknown regexp options - pt
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:103: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.1ms)
+
+
+Started GET "/post" for 127.0.0.1 at 2011-08-03 18:47:00 +0530
+
+ActionController::RoutingError (No route matches "/post"):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/post" for 127.0.0.1 at 2011-08-03 18:47:05 +0530
+
+ActionController::RoutingError (No route matches "/post"):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:47:09 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<'
+    <% form_for @comment do|f| %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected tIVAR, expecting keyword_end
+    <% form_for @comment do|f| %>
+                        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:21: syntax error, unexpected '<', expecting keyword_end
+      <%= f.hidden_field :post_id %>
+       ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:24: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        <%= f.label :name %><br />
+             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:24: syntax error, unexpected '>'
+        <%= f.label :name %><br />
+                            ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:26: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:28: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:30: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_field :email %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:30: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+         <%= f.text_area :body %>
+          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:39: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.submit "Post Comment" %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:39: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:44: unknown regexp options - pt
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:103: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:52:10 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '<'
+        <%= f.text_field :name %>
+         ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :email %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected '>'
+         <%= f.label :email %><br />
+                              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:33: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_area :body %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:42: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '<'
+     <%%> 
+      ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: unterminated string meets end of file):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (33.0ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (39.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:52:12 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '<'
+        <%= f.text_field :name %>
+         ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :email %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected '>'
+         <%= f.label :email %><br />
+                              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:33: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_area :body %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:42: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '<'
+     <%%> 
+      ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: unterminated string meets end of file):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:53:27 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '<'
+        <%= f.text_field :name %>
+         ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :email %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected '>'
+         <%= f.label :email %><br />
+                              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:33: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_area :body %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:42: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '<'
+     <% end %> 
+      ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '>'
+     <% end %> 
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:105: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:53:29 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '<'
+        <%= f.text_field :name %>
+         ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :email %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected '>'
+         <%= f.label :email %><br />
+                              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:33: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_area :body %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:42: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '<'
+     <% end %> 
+      ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '>'
+     <% end %> 
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:105: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:53:30 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <b>@comment = Comment.new( :post => @post )</b>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '<'
+        <%= f.text_field :name %>
+         ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :email %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:31: syntax error, unexpected '>'
+         <%= f.label :email %><br />
+                              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:33: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:35: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.text_area :body %>
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:37: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:42: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '<'
+     <% end %> 
+      ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:43: syntax error, unexpected '>'
+     <% end %> 
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:105: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 18:54:34 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:22: syntax error, unexpected '<', expecting keyword_end
+      <%= f.error_messages %>
+       ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      <%= f.hidden_field :post_id %>
+           ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        <%= f.text_field :name %>
+             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:32: syntax error, unexpected '<'
+         <%= f.text_field :email %>
+          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :body %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected '>'
+         <%= f.label :body %><br />
+                             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:38: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:40: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:49: syntax error, unexpected tCONSTANT, expecting keyword_end
+    @post = Post.new
+                ^):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 18:55:10 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:22: syntax error, unexpected '<', expecting keyword_end
+      <%= f.error_messages %>
+       ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      <%= f.hidden_field :post_id %>
+           ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        <%= f.text_field :name %>
+             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:32: syntax error, unexpected '<'
+         <%= f.text_field :email %>
+          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :body %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected '>'
+         <%= f.label :body %><br />
+                             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:38: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:40: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:49: syntax error, unexpected tCONSTANT, expecting keyword_end
+    @post = Post.new
+                ^):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 19:00:38 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 7228ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:00:48 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+Completed 500 Internal Server Error in 4646ms
+
+NameError (undefined local variable or method `within' for Comment(Table doesn't exist):Class):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[35mSQL (2808.5ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `name` varchar(255), `body` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (65.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110803130206')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `posts`
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:03:35 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:22: syntax error, unexpected '<', expecting keyword_end
+      <%= f.error_messages %>
+       ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      <%= f.hidden_field :post_id %>
+           ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        <%= f.text_field :name %>
+             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:32: syntax error, unexpected '<'
+         <%= f.text_field :email %>
+          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :body %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected '>'
+         <%= f.label :body %><br />
+                             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:38: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:40: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:49: syntax error, unexpected tCONSTANT, expecting keyword_end
+    @post = Post.new
+                ^):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:04:01 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:30: syntax error, unexpected tIVAR, expecting keyword_end
+      format.xml  { render :xml => @post }
+                                        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:82: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:04:23 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+Completed 500 Internal Server Error in 22ms
+
+NameError (undefined local variable or method `within' for #<Class:0x0000000367a928>):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:04:59 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 30ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:05:36 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:17: syntax error, unexpected '<', expecting keyword_end
+    <%= @post.id%>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:25: syntax error, unexpected tCONSTANT, expecting keyword_end
+    @post = Post.new
+                ^):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /home/piyuesh/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:06:50 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+Completed 500 Internal Server Error in 149ms
+
+NameError (undefined local variable or method `within' for #<Class:0x0000000346e008>):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:07:16 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+Completed 500 Internal Server Error in 21ms
+
+NameError (undefined local variable or method `within' for #<Class:0x000000039ad960>):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (44.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:07:19 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected '<', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:19: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:22: syntax error, unexpected '<', expecting keyword_end
+      <%= f.error_messages %>
+       ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+      <%= f.hidden_field :post_id %>
+           ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:23: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        <%= f.text_field :name %>
+             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:27: syntax error, unexpected '>'
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:32: syntax error, unexpected '<'
+         <%= f.text_field :email %>
+          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+         <%= f.label :body %><br />
+              ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:36: syntax error, unexpected '>'
+         <%= f.label :body %><br />
+                             ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:38: unknown regexp option - p
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:40: syntax error, unexpected '<'
+       <p>
+        ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:49: syntax error, unexpected tCONSTANT, expecting keyword_end
+    @post = Post.new
+                ^):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:10:52 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+Completed 500 Internal Server Error in 22ms
+
+NameError (undefined local variable or method `within' for #<Class:0x0000000316d070>):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:45 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:46 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (37.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:46 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:46 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:47 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:11:47 +0530
+
+SyntaxError (/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected '<'
+    <%= render :partial => 'comment', :collection => @post.comments %>
+     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:16: syntax error, unexpected ',', expecting keyword_end
+    <%= render :partial => 'comment', :collection => @post.comments %>
+                                     ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:18: syntax error, unexpected tIVAR, expecting keyword_end
+    @comment = Comment.new( :post => @post )
+                                          ^
+/home/piyuesh/ror/blog/app/controllers/posts_controller.rb:80: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:12:24 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Rendered posts/show.html.erb within layouts/application (63.3ms)
+Completed 500 Internal Server Error in 80ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    18: <%= link_to 'Back', posts_path %>
+    19: 
+    20: 
+    21:     <% form_for @comment do|f| %>
+    22:       <%= f.error_messages %>
+    23:       <%= f.hidden_field :post_id %>
+    24: 
+  app/views/posts/show.html.erb:21:in `_app_views_posts_show_html_erb___2907868665670414008_23973040__4560498119485468569'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:13:49 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined method `model_name' for NilClass:Class):
+    18: <%= link_to 'Back', posts_path %>
+    19: 
+    20: 
+    21:     <% form_for @comment do|f| %>
+    22:       <%= f.error_messages %>
+    23:       <%= f.hidden_field :post_id %>
+    24: 
+  app/views/posts/show.html.erb:21:in `_app_views_posts_show_html_erb___2907868665670414008_29358460__4560498119485468569'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:50:32 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+Completed 500 Internal Server Error in 21ms
+
+NameError (undefined local variable or method `within' for #<Class:0x00000003a92628>):
+  app/models/comment.rb:5:in `<class:Comment>'
+  app/models/comment.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:17:in `show'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.3ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 19:51:37 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Mysql2::Error: Unknown column 'comments.post_id' in 'where clause': SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/show.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 97ms
+
+ActionView::Template::Error (Mysql2::Error: Unknown column 'comments.post_id' in 'where clause': SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)):
+    17: <%= link_to 'Edit', edit_post_path(@post) %> |
+    18: <%= link_to 'Back', posts_path %>
+    19: 
+    20: <%= render :partial => 'comment', :collection => @post.comments %>
+    21: 
+    22:     <% form_for @comment do|f| %>
+    23:       <%= f.error_messages %>
+  app/views/posts/show.html.erb:20:in `_app_views_posts_show_html_erb___2907868665670414008_30627300__4560498119485468569'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.7ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateComments (20110803130206)
+  [1m[35mSQL (1881.7ms)[0m  DROP TABLE `comments`
+  [1m[36mAREL (65.2ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110803130206'[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+  [1m[35mSQL (2873.6ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `name` varchar(255), `body` varchar(255), `post_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (54.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110803130206')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:01:40 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_posts_show_html_erb___2907868665670414008_30560980__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:23)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___2907868665670414008_30560980__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 153ms (Views: 78.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:02:22 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_posts_show_html_erb___2907868665670414008_28688400__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:23)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___2907868665670414008_28688400__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 57ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:02:24 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_posts_show_html_erb___2907868665670414008_29351840__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:23)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___2907868665670414008_29351840__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 54ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:02:24 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_posts_show_html_erb___2907868665670414008_30070720__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:23)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___2907868665670414008_30070720__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 91ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:02:25 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_posts_show_html_erb___2907868665670414008_30682480__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:23)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___2907868665670414008_30682480__4560498119485468569 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 90ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:02:41 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__220803448399361417_25952720_4114472164729089308 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (112.5ms)
+Completed 200 OK in 282ms (Views: 116.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2011-08-03 20:03:31 +0530
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "comment"=>{"post_id"=>"1", "name"=>"test1", "email"=>"piyuesh23@gmail.com", "body"=>"testtvhvsd kjvbsdyhbsd"}, "commit"=>"Post Comment"}
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `comments` (`email`, `name`, `body`, `post_id`, `created_at`, `updated_at`) VALUES ('piyuesh23@gmail.com', 'test1', 'testtvhvsd kjvbsdyhbsd', 1, '2011-08-03 14:33:31', '2011-08-03 14:33:31')
+  [1m[36mSQL (558.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 613ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:03:32 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (127.8ms)
+Rendered posts/show.html.erb within layouts/application (136.8ms)
+Completed 500 Internal Server Error in 180ms
+
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x000000047ca2a0>:0x000000047ba148>):
+    3:     <%= simple_format h(comment.body) %>
+    4:   <%= link_to 'Destroy Comment', comment,
+    5:     :confirm => 'Are you sure?',
+    6:     :method => :delete if logged_in? %>
+    7: </div>
+  app/views/posts/_comment.html.erb:6:in `_app_views_posts__comment_html_erb__4129992732689046832_36894740_27160688497277185'
+  app/views/posts/show.html.erb:20:in `_app_views_posts_show_html_erb__220803448399361417_37600080_4114472164729089308'
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (29.8ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (37.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 20:03:51 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 30ms (Views: 17.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 20:06:59 +0530
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 30ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:07:00 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (1.6ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__220803448399361417_38523980_4114472164729089308 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 56ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2011-08-03 20:07:20 +0530
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "comment"=>{"post_id"=>"1", "name"=>"test2", "email"=>"piyuesh23@gmail.com", "body"=>"vjsbkvjbslkbvksdubviuosbdv"}, "commit"=>"Post Comment"}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  describe `comments`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `comments` (`email`, `name`, `body`, `post_id`, `created_at`, `updated_at`) VALUES ('piyuesh23@gmail.com', 'test2', 'vjsbkvjbslkbvksdubviuosbdv', 1, '2011-08-03 14:37:20', '2011-08-03 14:37:20')[0m
+  [1m[35mSQL (134.4ms)[0m  COMMIT
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 217ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:07:20 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (2.5ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__220803448399361417_35740980_4114472164729089308 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 58ms (Views: 20.1ms | ActiveRecord: 135.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:16:38 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (49.4ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__4336932640586837216_29012740__1318330061400892153 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (188.2ms)
+Completed 200 OK in 358ms (Views: 192.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-03 20:16:51 +0530
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (4338.1ms)
+Completed 200 OK in 4353ms (Views: 4342.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:17:17 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (2.1ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__4336932640586837216_39788240__1318330061400892153 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 93ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/comments/1" for 127.0.0.1 at 2011-08-03 20:17:27 +0530
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "id"=>"1"}
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 1[0m
+  [1m[35mSQL (84.6ms)[0m  COMMIT
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 127ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:17:27 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (1.6ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__4336932640586837216_37015640__1318330061400892153 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 59ms (Views: 18.4ms | ActiveRecord: 86.0ms)
+
+
+Started POST "/comments/2" for 127.0.0.1 at 2011-08-03 20:17:32 +0530
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IxIbEb0fd52CLO7fboMzkPUHDQUMfOjeqE3pyTS9PYA=", "id"=>"2"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 2
+  [1m[36mSQL (2566.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 2650ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-03 20:17:34 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__4336932640586837216_33506080__1318330061400892153 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 58ms (Views: 17.3ms | ActiveRecord: 2568.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-04 00:44:42 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 271ms (Views: 70.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-04 00:54:10 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___4179132110804355934_27530760__2564904814646374402 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (207.1ms)
+Completed 200 OK in 2722ms (Views: 230.6ms | ActiveRecord: 1.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-04 11:07:55 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 414ms (Views: 110.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-04 11:08:00 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___719271820234596640_70363042301740_1474629216446886155 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (448.4ms)
+Completed 200 OK in 3066ms (Views: 485.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2011-08-04 11:08:08 +0530
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/_form.html.erb (21.5ms)
+Rendered posts/edit.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 2655ms (Views: 2598.9ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at 2011-08-04 11:08:28 +0530
+  Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tEymBcUMzCjQcGf/hD2q/cUKHV4G3HGK5c7hQQ5uEz4=", "post"=>{"title"=>"test", "body"=>"test", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000004e7a460 @original_filename="DSC01523.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"DSC01523.JPG\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20110804-1773-1ap5yyx>>}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE `posts` SET `image_file_name` = 'DSC01523.JPG', `image_file_size` = 4399426, `image_updated_at` = '2011-08-04 05:38:34', `updated_at` = '2011-08-04 05:38:42' WHERE `posts`.`id` = 1
+[paperclip] Saving attachments.
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/original/HD_Wallpaper_225.jpg
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/small/HD_Wallpaper_225.jpg
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/original/DSC01523.JPG
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/small/DSC01523.JPG
+  [1m[36mSQL (55.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 14171ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-04 11:08:42 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb___719271820234596640_70363043695540_1474629216446886155 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 102ms (Views: 18.2ms | ActiveRecord: 56.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+Migrating to DeviseCreateUsers (20110807070900)
+  [1m[35mSQL (4491.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (58.4ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (389.9ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (4391.0ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (54.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110807070900')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-07 14:31:47 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 248ms (Views: 46.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-08-07 14:32:01 +0530
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-08-07 14:32:10 +0530
+
+ActionController::RoutingError (No route matches "/login"):
+  
+
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+Migrating to DeviseCreateUsers (20110807070900)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+Migrating to DeviseCreateUsers (20110807070900)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (141.9ms)[0m  DROP TABLE `users`
+  [1m[36mAREL (65.8ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20110807070900'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePosts (20110802075252)
+Migrating to AddAttachmentImageToPost (20110803124617)
+Migrating to CreateComments (20110803130206)
+Migrating to DeviseCreateUsers (20110807070900)
+  [1m[35mSQL (2512.9ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (334.2ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (278.4ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (54.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110807070900')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-08-07 15:49:56 +0530
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/sessions/new.html.erb within layouts/application (3221.5ms)
+Completed 200 OK in 3246ms (Views: 3227.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-08-07 15:50:06 +0530
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/registrations/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 44ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-08-07 15:50:10 +0530
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/sessions/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 91ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-08-07 15:50:11 +0530
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /home/piyuesh/.rvm/gems/ruby-1.9.2-p290/gems/devise-1.4.2/app/views/devise/registrations/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 43ms (Views: 30.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/piyuesh/ror/blog/vendor/plugins/dynamic_form/lib/dynamic_form.rb:3)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-18 23:21:25 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (22.8ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 337ms (Views: 121.4ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-18 23:21:30 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__3540058819944447344_16211160_1100278569229219863 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (274.2ms)
+Completed 200 OK in 2225ms (Views: 296.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2011-08-18 23:21:49 +0530
+  Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VRVXOIHn+Y29pqMqvmuuGjvc3SywdZC9FX3x1DYAmQ4=", "comment"=>{"post_id"=>"1", "name"=>"tyftftyf", "email"=>"ytytfytfyt", "body"=>"fyt"}, "commit"=>"Post Comment"}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (179.9ms)[0m  describe `comments`
+  [1m[36mAREL (198.2ms)[0m  [1mINSERT INTO `comments` (`email`, `name`, `body`, `post_id`, `created_at`, `updated_at`) VALUES ('ytytfytfyt', 'tyftftyf', 'fyt', 1, '2011-08-18 17:51:50', '2011-08-18 17:51:50')[0m
+  [1m[35mSQL (1357.3ms)[0m  COMMIT
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 2286ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-18 23:21:53 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (3.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (90.6ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__3540058819944447344_29948480_1100278569229219863 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (173.6ms)
+Completed 200 OK in 219ms (Views: 175.1ms | ActiveRecord: 1739.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-18 23:27:50 +0530
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 29ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-18 23:27:52 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (1.7ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__3540058819944447344_29812560_1100278569229219863 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 96ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2011-08-18 23:27:53 +0530
+  Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+Rendered posts/_form.html.erb (14.0ms)
+Rendered posts/edit.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 1270ms (Views: 1256.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at 2011-08-18 23:28:46 +0530
+  Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VRVXOIHn+Y29pqMqvmuuGjvc3SywdZC9FX3x1DYAmQ4=", "post"=>{"title"=>"test", "body"=>"test", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000000388ec00 @original_filename="test-transac.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"test-transac.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/tmp/RackMultipart20110818-23653-3udvkz>>}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE `posts` SET `image_file_name` = 'test-transac.png', `image_content_type` = 'image/png', `image_file_size` = 177017, `image_updated_at` = '2011-08-18 17:58:48', `updated_at` = '2011-08-18 17:58:49' WHERE `posts`.`id` = 1
+[paperclip] Saving attachments.
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/original/DSC01523.JPG
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/small/DSC01523.JPG
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/original/test-transac.png
+[paperclip] saving /home/piyuesh/ror/blog/public/system/images/1/small/test-transac.png
+  [1m[36mSQL (81.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 3042ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-18 23:28:49 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)[0m
+Rendered posts/_comment.html.erb (1.6ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__3540058819944447344_29037940_1100278569229219863 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 103ms (Views: 19.7ms | ActiveRecord: 82.6ms)
+
+
+Started POST "/comments/1" for 127.0.0.1 at 2011-08-18 23:29:00 +0530
+  Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VRVXOIHn+Y29pqMqvmuuGjvc3SywdZC9FX3x1DYAmQ4=", "id"=>"1"}
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 1
+  [1m[36mSQL (61.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 150ms
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2011-08-18 23:29:00 +0530
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+Rendered posts/_comment.html.erb (0.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_posts_show_html_erb__3540058819944447344_25413480_1100278569229219863 at /home/piyuesh/ror/blog/app/views/posts/show.html.erb:22)
+Rendered posts/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 62ms (Views: 18.3ms | ActiveRecord: 63.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-18 23:29:05 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 29ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts/1" for 127.0.0.1 at 2011-08-18 23:29:15 +0530
+  Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VRVXOIHn+Y29pqMqvmuuGjvc3SywdZC9FX3x1DYAmQ4=", "id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/original/test-transac.png
+[paperclip] deleting /home/piyuesh/ror/blog/public/system/images/1/small/test-transac.png
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments` WHERE (`comments`.post_id = 1)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `posts` WHERE `posts`.`id` = 1[0m
+  [1m[35mSQL (130.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 174ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-08-18 23:29:15 +0530
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 131.5ms)

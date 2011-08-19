@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <%= image_tag @post.image.url(:small)%>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @post.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<%= render :partial => 'comment', :collection => @post.comments %>
+
+    <% form_for @comment do|f| %>
+      <%= f.error_messages %>
+      <%= f.hidden_field :post_id %>
+
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+                 
+       <p>
+         <%= f.label :email %><br />
+         <%= f.text_field :email %>
+       </p>
+                             
+       <p>
+         <%= f.label :body %><br />
+         <%= f.text_area :body %>
+       </p>
+                                         
+       <p>
+         <%= f.submit "Post Comment" %>
+       </p>       
+     <% end %> 
